@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: ./dev.sh
+    volumes:
+      - .:/app
+    volumes_from:
+      - bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  bundle:
+    image: busybox
+    volumes:
+      - /bundle
