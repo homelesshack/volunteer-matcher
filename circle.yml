@@ -1,4 +1,9 @@
 general:
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: homeless-hack
 test:
   override:
     - bundle exec rspec --color --require spec_helper spec --format progress
