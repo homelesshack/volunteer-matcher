@@ -1,1 +1,4 @@
 general:
+test:
+  override:
+    - bundle exec rspec --color --require spec_helper spec --format progress
