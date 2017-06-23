@@ -67,6 +67,5 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: volunteer-matcher_production
-  username: volunteer-matcher
-  password: <%= ENV['VOLUNTEER-MATCHER_DATABASE_PASSWORD'] %>
