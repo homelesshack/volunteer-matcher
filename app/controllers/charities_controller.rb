@@ -54,6 +54,6 @@ class CharitiesController < ApplicationController
   end
 
   def authorize
-    redirect_to root_path unless @Charity.account == current_account
+    redirect_to root_path unless @charity.account == current_account
   end
 end
