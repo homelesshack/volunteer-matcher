@@ -5,8 +5,9 @@
     <% if !current_account.accountable.approved %>
       <p> We're still approving your application</p>
     <% else %>
-      <%= link_to 'Update Charity Details', edit_charity_path(current_account.accountable) %>
-      <%= link_to 'See some volunteers near you', volunteers_path %>
+      <%= link_to 'Update Charity Details', edit_charity_path(current_account.accountable) %><br />
+      <%= link_to 'See some volunteers near you', volunteers_path %><br />
+      <%= link_to 'Add some of your charity needs', [current_account.accountable, :needs] %>
     <% end %>
 
     <p>
