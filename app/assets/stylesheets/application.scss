@@ -14,9 +14,57 @@
  *= require_self
  */
 @import "bootstrap";
-@import "gridset-prototyping";
+@import "gridset/gridset-prototyping";
+
+$rem-line-height: 1.5rem;
+
+$rgba-primary-0: rgba(45, 136, 45, 1);
+$rgba-primary-1: rgba(136, 204, 136, 1);
+$rgba-primary-2: rgba(85, 170, 85, 1);
+$rgba-primary-3: rgba(17, 102, 17, 1);
+$rgba-primary-4: rgba(0, 68, 0, 1);
+
+$rgba-primary-0-02: rgba(29, 164, 29, 0.4);
+$rgba-primary-0-03: rgba(31, 220, 31, 0.5);
 
 .wrapper {
   width: 90%;
   margin: 0 auto;
+}
+
+.page {
+  margin-top: $rem-line-height * 3;
+  background-color: rgba(255, 255, 255, 0.33);
+  border-radius: 4px;
+  color: #2E2F30;
+
+  div:first-child {
+    margin-top: $rem-line-height;
+  }
+  div:last-child {
+    margin-bottom: $rem-line-height;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  line-height: $rem-line-height * 3;
+}
+
+body {
+  background-color: transparent;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient($rgba-primary-0-03, $rgba-primary-0-02, $rgba-primary-0-03);
+}
+
+.form-question {
+  margin-bottom: $rem-line-height * 2;
 }
