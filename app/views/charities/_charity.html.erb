@@ -1,5 +1,8 @@
-<p>
-  <%= link_to("Edit #{charity.name}", edit_charity_path(charity)) %>
-  <%= link_to("View #{charity.name}", charity_path(charity)) %>
-  <%= link_to("Delete #{charity.name}", charity_path(charity), method: :delete) %>
-</p>
+<li class="db-all db-padfull">
+  <span class="db1"><%= link_to(charity.name, charity_path(charity)) %></span>
+
+  <span class="db4 actions">
+    <%= link_to('Edit', edit_charity_path(charity)) %>
+    <%= link_to('Delete', charity_path(charity), method: :delete) %>
+  </span>
+</li>

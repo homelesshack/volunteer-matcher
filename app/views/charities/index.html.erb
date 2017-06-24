@@ -1,3 +1,7 @@
-<% @charities.each do |charity| %>
-  <%= render charity %>
-<% end %>
+<div class="wrapper">
+  <ul class="list-page data-list">
+    <% @charities.each do |charity| %>
+        <%= render charity %>
+    <% end %>
+  </ul>
+</div>
