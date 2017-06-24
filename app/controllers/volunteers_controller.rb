@@ -1,5 +1,8 @@
 class VolunteersController < ApplicationController
+  include EnsureNewAccount
+
   before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   def index
     @volunteers = Volunteer.all
@@ -17,8 +20,9 @@ class VolunteersController < ApplicationController
 
   def create
     @volunteer = Volunteer.new(volunteer_params)
+    @volunteer.account = current_account
     if @volunteer.save
-      redirect_to @volunteer, notice: 'Volunteer was successfully created.'
+      redirect_to root_path, notice: 'Volunteer was successfully created.'
     else
       render :new
     end
@@ -26,7 +30,7 @@ class VolunteersController < ApplicationController
 
   def update
     if @volunteer.update(volunteer_params)
-      redirect_to @volunteer, notice: 'Volunteer was successfully updated.'
+      redirect_to root_path, notice: 'Volunteer was successfully updated.'
     else
       render :edit
     end
@@ -41,6 +45,10 @@ class VolunteersController < ApplicationController
 
   def set_volunteer
     @volunteer = Volunteer.find(params[:id])
+  end
+
+  def authorize
+    redirect_to root_path unless @volunteer.account == current_account
   end
 
   def volunteer_params
