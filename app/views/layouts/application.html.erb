@@ -14,8 +14,18 @@
         <div class="da1-da2">Volunteer Matcher</div>
       </div>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <% if notice || alert %>
+        <div class="notices">
+          <div class="wrapper">
+            <div class="db2-db3 ">
+              <%= notice %>
+              <%= alert %>
+            </div>
+          </div>
+        </div>
+        <div class="push"></div>
+    <% end %>
     <%= yield %>
   </body>
   <%= javascript_include_tag 'gridset-overlay', 'data-turbolinks-track': 'reload' %>

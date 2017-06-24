@@ -1,16 +1,20 @@
-<h1>Voluteer Matcher</h1>
-<% if account_signed_in? %>
-  <p>
-    <%= link_to 'Sign out', destroy_account_session_path, method: :delete %>
-  </p>
-  <p>
-    <%= link_to 'My account', edit_account_registration_path %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to 'Sign in', new_account_session_path %>
-  </p>
-  <p>
-    <%= link_to 'Sign up', new_account_registration_path %>
-  </p>
-<% end %>
+<div class="wrapper">
+  <div class="page db2-db3 db-padfull">
+    <h1>Voluteer Matcher</h1>
+    <% if account_signed_in? %>
+        <p>
+          <%= link_to 'Sign out', destroy_account_session_path, method: :delete %>
+        </p>
+        <p>
+          <%= link_to 'My account', edit_account_registration_path %>
+        </p>
+    <% else %>
+        <p>
+          <%= link_to 'Sign in', new_account_session_path %>
+        </p>
+        <p>
+          <%= link_to 'Sign up', new_account_registration_path %>
+        </p>
+    <% end %>
+  </div>
+</div>

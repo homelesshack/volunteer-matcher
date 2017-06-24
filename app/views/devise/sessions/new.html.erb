@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="page db2-db3 db-padfull">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="db-all">
+          <h2>Log in</h2>
+          <div class="form-inputs">
+            <%= f.input :email, required: false, autofocus: true, input_html: { class: 'db-padin' } %>
+            <%= f.input :password, required: false, input_html: { class: 'db-padin' } %>
+            <%= f.input :remember_me, as: :boolean, input_html: { class: 'db-padin' } if devise_mapping.rememberable? %>
+          </div>
+        </div>
+        <div class="db2">
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+          </div>
+        </div>
+        <div class="db3">
+          <%= render "devise/shared/links" %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
