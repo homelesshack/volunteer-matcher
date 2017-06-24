@@ -1,7 +1,14 @@
 <div class="wrapper">
   <div class="page db2-db3 db-padinfull">
     <h1><%= @charity.name %></h1>
-    <p>Some useful information to go here...</p>
+    <% if @charity.needs.count > 0 %>
+        <p>We need the following skills</p>
+    <% end %>
+    <ul>
+      <% @charity.needs.each do |need| %>
+          <li><%= link_to need.skill, need %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
