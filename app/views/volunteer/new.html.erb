@@ -1,5 +1,4 @@
-<%= simple_form_for @volunteer do |f| %>
-  <%= f.input :username %>
-  <%= f.input :password %>
+<%= simple_form_for @volunteer, url: '' do |f| %>
+  <%= f.text_field :name %>
   <%= f.button :submit %>
 <% end %>
