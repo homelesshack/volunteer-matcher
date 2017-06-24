@@ -1,4 +1,34 @@
-<%= simple_form_for @volunteer, url: '' do |f| %>
-  <%= f.text_field :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="wrapper">
+  <%= simple_form_for @volunteer, url: '' do |f| %>
+      <div class="da-all">
+        <div>My name is...</div>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="da-all">
+        <span>I can donate</span>
+        <span>
+            <%= f.text_field :hours_per_week, class: 'form-control' %>
+          </span>
+        <span> hours per week</span>
+      </div>
+
+      <div class="da-all">
+        <span>I can donate</span>
+        <span>
+            <%= f.select :days_available, options_for_select(Date::DAYNAMES), {}, { multiple: true, class: 'form-control' } %>
+          </span>
+        <span> hours per week</span>
+      </div>
+
+      <div class="da-all">
+        <span>I have the following skills</span>
+        <span>
+            <%= f.text_field :skills, class: 'form-control' %>
+          </span>
+        <span> hours per week</span>
+      </div>
+
+      <%= f.button :submit %>
+  <% end %>
+</div>

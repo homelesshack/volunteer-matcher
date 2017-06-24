@@ -14,3 +14,9 @@
  *= require_self
  */
 @import "bootstrap";
+@import "gridset-prototyping";
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
