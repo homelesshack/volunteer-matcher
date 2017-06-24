@@ -32,6 +32,35 @@ $rgba-primary-0-03: rgba(31, 220, 31, 0.5);
   margin: 0 auto;
 }
 
+.data-list {
+  list-style: none;
+  line-height: $rem-line-height * 3;
+  .actions {
+    display: none;
+  }
+  li:nth-child(n) {
+    background-color: rgba(255, 255, 255, 0.22);
+  }
+  li:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.33);
+  }
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.44);
+    .actions {
+      display: block;
+    }
+  }
+  .actions a {
+    margin-right: $rem-line-height;
+  }
+}
+
+.list-page {
+  margin-top: $rem-line-height * 3;
+  display: block;
+  padding: 0;
+}
+
 .page {
   margin-top: $rem-line-height * 3;
   background-color: rgba(255, 255, 255, 0.33);

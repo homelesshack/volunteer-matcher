@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require popper
-//= require gridset-overlay.js
+//= require jquery3
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
