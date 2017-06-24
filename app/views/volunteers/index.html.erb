@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Volunteers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Hours per week</th>
-      <th>Days available</th>
-      <th>Skills</th>
-      <th>Postcode</th>
-      <th>Miles from</th>
-      <th>Dbs checked</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="wrapper">
+  <ul class="list-page data-list da-clear">
     <% @volunteers.each do |volunteer| %>
-      <tr>
-        <td><%= volunteer.name %></td>
-        <td><%= volunteer.hours_per_week %></td>
-        <td><%= volunteer.days_available.join(', ') %></td>
-        <td><%= volunteer.skills.join(', ') %></td>
-        <td><%= volunteer.postcode %></td>
-        <td><%= volunteer.miles_from %></td>
-        <td><%= volunteer.dbs_checked %></td>
-        <td><%= link_to 'Show', volunteer %></td>
-        <td><%= link_to 'Edit', edit_volunteer_path(volunteer) %></td>
-        <td><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <li class="da-all da-padfull">
+          <div class="da1">
+            <b><%= link_to volunteer.name, volunteer %></b>
+            <% if volunteer.dbs_checked %>
+                Is DBS checked
+            <% end %>
+          </div>
+          <div class="da2-da3 hours">
+            <b><%= volunteer.hours_per_week %></b> hours per week on these days
+            <br />
+            <b><%= volunteer.days_available.join(', ') %></b>
+          </div>
+          <div class="da4"><%= volunteer.skills.join(', ') %></div>
+          <div class="da5">
+            Near <b><%= volunteer.postcode %></b>
+            <br />
+            within <%= volunteer.miles_from %> miles
+          </div>
+          <div class="da6 actions">
+            <%= link_to 'Edit', edit_volunteer_path(volunteer) %>
+            <%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+  <div class="da-all">
+    <%= link_to 'New Volunteer', new_volunteer_path %>
+  </div>
+</div>
 
-<br>
 
-<%= link_to 'New Volunteer', new_volunteer_path %>

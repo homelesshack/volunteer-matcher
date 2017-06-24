@@ -36,7 +36,7 @@ $rgba-primary-0-03: rgba(31, 220, 31, 0.5);
   list-style: none;
   line-height: $rem-line-height * 3;
   .actions {
-    display: none;
+    opacity: 0;
   }
   li:nth-child(n) {
     background-color: rgba(255, 255, 255, 0.22);
@@ -47,16 +47,28 @@ $rgba-primary-0-03: rgba(31, 220, 31, 0.5);
   li:hover {
     background-color: rgba(255, 255, 255, 0.44);
     .actions {
-      display: block;
+      opacity: 1;
     }
   }
   .actions a {
-    margin-right: $rem-line-height;
+    margin-right: $rem-line-height/2;
+  }
+  li:last-child {
+    margin-bottom: $rem-line-height;
+  }
+}
+
+.hours {
+  div:first-child {
+    line-height: 3rem;
+  }
+  div:last-child {
+    line-height: 0rem;
   }
 }
 
 .list-page {
-  margin-top: $rem-line-height * 3;
+  margin-top: $rem-line-height * 4;
   display: block;
   padding: 0;
 }
