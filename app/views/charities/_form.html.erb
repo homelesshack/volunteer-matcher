@@ -1,12 +1,14 @@
-<%= simple_form_for(@charity) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :postcode %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<%= simple_form_for @charity do |f| %>
+    <%= f.error_notification %>
+    <div class="db-all form-question">
+      We are called...
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="db-all form-question">
+      Our primary postcode is...
+      <%= f.text_field :postcode, class: 'form-control' %>
+    </div>
+    <div class="db-all">
+      <%= f.button :submit %>
+    </div>
 <% end %>
