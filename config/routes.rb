@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'volunteer/signup', to: 'volunteer#new'
+  resources :volunteers
 
   devise_for :accounts
   resources :charities do

@@ -1,0 +1,53 @@
+<%= simple_form_for(@volunteer, defaults: { label: false }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="db-all form-question">
+    <div>My name is...</div>
+    <%= f.input :name %>
+  </div>
+
+  <div class="db-all form-question">
+    <span>I can donate</span>
+    <span>
+      <%= f.input :hours_per_week  %>
+    </span>
+    <span> hours per week</span>
+  </div>
+
+  <div class="db-all form-question">
+    <span>I available on the following days of the week...</span>
+    <span>
+      <%= f.input :days_available, collection: Date::DAYNAMES, include_hidden: false, input_html: { multiple: true } %>
+    </span>
+  </div>
+
+  <div class="db-all form-question">
+    <span>I have the following skills</span>
+    <span>
+      <%= f.input :skills, collection: ['Accounting', 'Kitchen Help'], include_hidden: false, input_html: { multiple: true } %>
+    </span>
+  </div>
+
+  <div class="db-all form-question">
+    <span>I can volunteer around this postcode...</span>
+    <span>
+      <%= f.input :postcode  %>
+    </span>
+  </div>
+
+  <div class="db-all form-question">
+    <span>And I am willing to travel</span>
+    <span>
+      <%= f.select :miles_from, (1..10).to_a %>
+    </span>
+    <span>miles</span>
+  </div>
+
+  <div class="db-all form-check form-question">
+    <%= f.input :dbs_checked, inline_label: 'I am DBS checked' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

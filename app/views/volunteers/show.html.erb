@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @volunteer.name %>
+</p>
+
+<p>
+  <strong>Hours per week:</strong>
+  <%= @volunteer.hours_per_week %>
+</p>
+
+<p>
+  <strong>Days available:</strong>
+  <%= @volunteer.days_available.join(', ') %>
+</p>
+
+<p>
+  <strong>Skills:</strong>
+  <%= @volunteer.skills.join(', ') %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @volunteer.postcode %>
+</p>
+
+<p>
+  <strong>Miles from:</strong>
+  <%= @volunteer.miles_from %>
+</p>
+
+<p>
+  <strong>Dbs checked:</strong>
+  <%= @volunteer.dbs_checked %>
+</p>
+
+<%= link_to 'Edit', edit_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', volunteers_path %>
