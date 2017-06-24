@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="page db2-db3 db-padfull">
+    <h1>Hello <%= current_account.accountable.name %></h1>
+
+    <% if !current_account.accountable.approved %>
+      <p> We're still approving your application</p>
+    <% else %>
+      <%= link_to 'Update Charity Details', edit_charity_path(current_account.accountable) %>
+    <% end %>
+
+    <p>
+      <%= link_to 'Sign out', destroy_account_session_path, method: :delete %>
+    </p>
+    <p>
+      <%= link_to 'My login details', edit_account_registration_path %>
+    </p>
+  </div>
+</div>
