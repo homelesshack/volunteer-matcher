@@ -5,7 +5,9 @@
           <li><%= link_to need.skill, need %></li>
       <% end %>
     </ul>
-    <%= link_to 'Add a need', [:new, @charity, :need] %>
+    <% if current_user.accountable == @charity %>
+      <%= link_to 'Add a need', [:new, @charity, :need] %>
+    <% end %>
   </div>
 </div>
 
