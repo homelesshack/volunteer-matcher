@@ -2,8 +2,7 @@
   <div class="page db2-db3 db-padfull">
     <ul>
       <% @charity.needs.each do |need| %>
-          <li><%= link_to need.skill, need %> <%= link_to 'Edit', [:edit, need] %>
-            | <%= link_to 'Destroy', need, method: :delete %></li>
+          <li><%= link_to need.skill, need %></li>
       <% end %>
     </ul>
     <%= link_to 'Add a need', [:new, @charity, :need] %>
