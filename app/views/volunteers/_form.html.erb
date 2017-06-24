@@ -3,13 +3,13 @@
 
   <div class="db-all form-question">
     <div>My name is...</div>
-    <%= f.input :name %>
+    <%= f.input :name, input_html: { class: 'db-padin' } %>
   </div>
 
   <div class="db-all form-question">
     <span>I can donate</span>
     <span>
-      <%= f.input :hours_per_week  %>
+      <%= f.input :hours_per_week, input_html: { class: 'db-padin' } %>
     </span>
     <span> hours per week</span>
   </div>
@@ -17,34 +17,34 @@
   <div class="db-all form-question">
     <span>I available on the following days of the week...</span>
     <span>
-      <%= f.input :days_available, collection: Date::DAYNAMES, include_hidden: false, input_html: { multiple: true } %>
+      <%= f.input :days_available, collection: Date::DAYNAMES, include_hidden: false, input_html: { multiple: true, class: 'db-padin' } %>
     </span>
   </div>
 
   <div class="db-all form-question">
     <span>I have the following skills</span>
     <span>
-      <%= f.input :skills, collection: ['Accounting', 'Kitchen Help'], include_hidden: false, input_html: { multiple: true } %>
+      <%= f.input :skills, collection: ['Accounting', 'Kitchen Help'], include_hidden: false, input_html: { multiple: true, class: 'db-padin' } %>
     </span>
   </div>
 
   <div class="db-all form-question">
     <span>I can volunteer around this postcode...</span>
     <span>
-      <%= f.input :postcode  %>
+      <%= f.input :postcode, input_html: { class: 'db-padin' } %>
     </span>
   </div>
 
   <div class="db-all form-question">
     <span>And I am willing to travel</span>
     <span>
-      <%= f.select :miles_from, (1..10).to_a %>
+      <%= f.select :miles_from, (1..10).to_a, input_html: { class: 'form-control' } %>
     </span>
     <span>miles</span>
   </div>
 
   <div class="db-all form-check form-question">
-    <%= f.input :dbs_checked, inline_label: 'I am DBS checked' %>
+    <%= f.input :dbs_checked, inline_label: 'I am DBS checked', input_html: { class: 'db-padin' } %>
   </div>
 
   <div class="form-actions">
