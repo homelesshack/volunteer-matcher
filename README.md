@@ -1,24 +1,7 @@
-# README
+# Volunteer - Charity Matcher
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trello board: https://trello.com/b/sNSST9P0/volunteer-matcher
 
-Things you may want to cover:
+Wireframes: https://docs.google.com/presentation/d/10NucmBWaORXUX8um1gpH4fwoQMuHaNAXOXPj3DnuoT8/edit?usp=sharing
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
