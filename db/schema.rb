@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623192744) do
+ActiveRecord::Schema.define(version: 20170624095046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,4 +32,23 @@ ActiveRecord::Schema.define(version: 20170623192744) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
+  create_table "charities", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "postcode", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "approved", default: false, null: false
+  end
+
+  create_table "needs", force: :cascade do |t|
+    t.string "skill", null: false
+    t.decimal "time_amount", null: false
+    t.bigint "charity_id", null: false
+    t.string "days", default: [], null: false, array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["charity_id"], name: "index_needs_on_charity_id"
+  end
+
+  add_foreign_key "needs", "charities"
 end

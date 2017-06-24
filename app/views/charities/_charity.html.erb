@@ -1,0 +1,5 @@
+<p>
+  <%= link_to("Edit #{charity.name}", edit_charity_path(charity)) %>
+  <%= link_to("View #{charity.name}", charity_path(charity)) %>
+  <%= link_to("Delete #{charity.name}", charity_path(charity), method: :delete) %>
+</p>
