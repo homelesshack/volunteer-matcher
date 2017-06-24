@@ -7,7 +7,7 @@ class CharitiesController < ApplicationController
   def create
     @charity = Charity.new(charity_params)
     if @charity.save
-      redirect_to charity_path
+      redirect_to charities_path
     else
       render :new
     end
@@ -22,13 +22,13 @@ class CharitiesController < ApplicationController
   end
 
   def edit
-    @charity = Charity.find(params[:id])
+    @charity = Charity.approved.find(params[:id])
   end
 
   def update
-    @charity = Charity.find(params[:id])
+    @charity = Charity.approved.find(params[:id])
     if @charity.update(charity_params)
-      redirect_to charity_path
+      redirect_to @charity
     else
       render :edit
     end
