@@ -1,8 +1,7 @@
-<h1>Editing Volunteer</h1>
-
-<div class="page wrapper db2-db3 db-padinfull">
-  <%= render 'form', volunteer: @volunteer %>
+<div class="wrapper">
+  <div class="page db2-db3 db-padfull">
+    <%= link_to 'Back', root_path %>
+    <hr/>
+    <%= render 'form', volunteer: @volunteer %>
+  </div>
 </div>
-
-<%= link_to 'Show', @volunteer %> |
-<%= link_to 'Back', root_path %>
