@@ -3,7 +3,7 @@
 <div class="form-inputs">
   <%= f.input :skill, input_html: { class: 'db-padin' } %>
   <%= f.input :time_amount, input_html: { class: 'db-padin' } %>
-  <%= f.input :days, collection: Date::DAYNAMES, input_html: { multiple: true, class: 'db-padin' } %>
+  <%= f.input :days, collection: Date::DAYNAMES, include_hidden: false, input_html: { multiple: true, class: 'db-padin' } %>
 </div>
 
 <div class="form-actions">
